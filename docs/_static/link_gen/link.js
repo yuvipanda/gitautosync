@@ -135,7 +135,8 @@ function displayLink() {
         var hubUrl = document.getElementById('hub').value;
         var repoUrl = document.getElementById('repo').value;
         var branch = document.getElementById('branch').value;
-        var contentRepoUrl = document.getElementById('content-repo').value;
+        // Remove trailing slashes from content repos. nbgitpuller is confused by these.
+        var contentRepoUrl = document.getElementById('content-repo').value.replace(/\/$/, "");
         var contentRepoBranch = document.getElementById('content-branch').value;
         var filePath = document.getElementById('filepath').value;
         var appName = form.querySelector('input[name="app"]:checked').value;
